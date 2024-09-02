@@ -3,21 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather CLI Web App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Weather App</h1>
-        <input type="text" id="city" placeholder="Enter city" />
-        <button onclick="getWeather()">Get Weather</button>
+        <h1 class="title">Weather CLI Web App</h1>
 
-        <div id="weather" class="weather-info">
-            <div id="weather-details" class="details"></div>
+        <div class="input-section">
+            <label for="search-type">Search by:</label>
+            <select id="search-type">
+                <option value="city">City</option>
+                <option value="location">Your Location</option>
+            </select>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <div class="input-section city-input">
+            <input type="text" id="city" placeholder="Enter City Name">
+            <button onclick="getWeather()">Submit</button>
+        </div>
+
+        <div id="weather-info" class="weather-info"></div>
+        
+        <div id="options" class="options hidden">
+            <h2>Select an Option:</h2>
+            <button onclick="showWeatherDetail('min')">1. Check MIN Temperature</button>
+            <button onclick="showWeatherDetail('max')">2. Check MAX Temperature</button>
+            <button onclick="showWeatherDetail('humidity')">3. Check Humidity</button>
+            <button onclick="showWeatherDetail('sunrise')">4. Check Sunrise Time</button>
+            <button onclick="showWeatherDetail('sunset')">5. Check Sunset Time</button>
+            <button onclick="showForecast()">6. Check 5-Day Forecast</button>
+        </div>
+
+        <div id="details" class="details"></div>
+        <div id="forecast-info" class="forecast-info"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
