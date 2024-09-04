@@ -1,4 +1,4 @@
-# Weatherapi2
+# Weather API
 
 Weather API Application
 This Weather API application allows users to retrieve real-time weather data and a 5-day forecast for any city or location. The application leverages the OpenWeather API to fetch weather data and provides an easy-to-use interface for users to interact with.
